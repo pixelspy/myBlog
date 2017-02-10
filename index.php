@@ -2,11 +2,12 @@
 $entries = array_diff(scandir("articles", 1), array('.', '..', '.php') );
 $key = array_search($_GET['article'] . ".php", $entries);
 
-$dateForm = $_POST['date'];
+$today = date('Y-m-d');
+$languageForm = $_POST['language'];
 $titleForm = $_POST['title'];
 $contentForm = $_POST['content'];
 
-function createArticle($date, $title, $content)
+function createArticle($date, $language, $title, $content)
 {
   $navNav = "<?php include 'nav_article.php'; ?>";
   $newArticleTitle = $date . ".php";
@@ -17,8 +18,9 @@ function createArticle($date, $title, $content)
   fclose($createdFile);
 }
 
-createArticle($dateForm, $titleForm, $contentForm);
+createArticle($today, $languageForm, $titleForm, $contentForm);
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,6 +29,7 @@ createArticle($dateForm, $titleForm, $contentForm);
     <title>Le p'tit blog d'un jeu dev !</title>
   </head>
   <body>
+
     <header class="flex">
       <h1><a href="index.php" class="title">CHARLES<span class="pink-span">.</span>FOURNIER</a></h1>
       <nav class="nav-header">
@@ -38,6 +41,7 @@ createArticle($dateForm, $titleForm, $contentForm);
         </ul>
       </nav>
     </header>
+
     <main class="flex black">
       <article class="article-container">
         <?php
@@ -59,10 +63,11 @@ createArticle($dateForm, $titleForm, $contentForm);
          }
          else
         {
-            include "accueil.php";# code...
+            include "accueil.php";
          }
         ?>
       </article>
+
       <nav class="nav-main pink">
         <div class="masque pink"></div>
         <h3 class="font-color-green">Mes Articles</h3>
@@ -80,19 +85,22 @@ createArticle($dateForm, $titleForm, $contentForm);
           ?>
         </ul>
       </nav>
+
       <div class="form-container green flex flexColumn">
         <h3 class="font-color-pink">Nouvel Article</h3>
         <form class="" action="index.php" method="post">
-          <input type="text" name="date" value="">
+          <?php echo "<input type=\"text\" name=\"date\" value=\"$today\">"; ?>
+          <input type="text" name="language" value="">
           <input type="text" name="title" value="<h4></h4>">
           <textarea name="content" rows="8" cols="32"><p></p></textarea>
           <input type="submit" name="" value="Submit" id="submit" class="black">
         </form>
       </div>
+
     </main>
     <footer>
     </footer>
-    <script src=""https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js""></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
