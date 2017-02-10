@@ -1,0 +1,279 @@
+@font-face {
+    font-family: 'Raleway-R';
+    src: url("../fonts/Raleway-Regular.ttf");
+}
+
+@font-face {
+  font-family:'Raleway-B';
+  src: url('../fonts/Raleway-Bold.ttf');
+}
+
+@font-face {
+  font-family:'Jaapokki-R';
+  src: url('../fonts/jaapokki-regular.ttf');
+}
+
+@font-face {
+  font-family:'Jaapokki-Enchance';
+  src: url('../fonts/jaapokkienchance-regular.ttf');
+}
+
+@font-face {
+  font-family:'Jaapokki-Subtract';
+  src: url('../fonts/jaapokkisubtract-regular.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+* {
+  color: #28262c;
+  font-family: 'Raleway-R';
+}
+
+a, .a {
+  text-decoration: none;
+}
+
+a:focus, .a:focus {
+  outline: none;
+}
+
+.a {
+  position: relative;
+}
+
+.a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  margin-top: 2px;
+  background-color: #56e39f;
+  transform: scaleX(0);
+  transition: all 0.2s ease-in-out;
+}
+
+.a:hover::after {
+  transform: scaleX(1);
+}
+
+.flex {
+  display : flex;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.pink {
+  background-color: #ed6a5a;
+}
+
+.green {
+  background-color: #56e39f;
+}
+
+.black {
+  background-color: #28262c;
+}
+
+.font-color-green {
+  color: #56e39f;
+}
+
+.font-color-pink {
+  color: #ed6a5a;
+}
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+header
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+header {
+  height: 100px;
+  justify-content: space-around;
+}
+
+.title {
+  font-family: 'Jaapokki-Subtract';
+  transition: all 0.8s ease-in-out;
+}
+
+.pink-span {
+  color: #ed6a5a;
+}
+
+.nav-header ul {
+  margin-top: 4 0px;
+}
+
+.nav-header ul li {
+  list-style-type: none;
+  margin: 15px;
+}
+
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+MAIN
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+main  {
+  position: relative;
+  left: 24%;
+  top: 30px;
+  height: 530px;
+  width: 650px;
+}
+
+.article-container {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  left: 70px;
+  top: 25px;
+  padding: 10px;
+  animation: opacite 0.8s ease-in-out both;
+}
+
+.article-container a {
+  color: #ed6a5a;
+  font-family: 'Raleway-B';
+}
+
+.article-container h4  {
+  color: #56e39f;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.article-container p {
+  color: #fbfbff;
+}
+
+.accueil {
+  font-family: 'Jaapokki-Subtract';
+  font-size: 4em;
+  padding: 0;
+  margin-top: 2%;
+  line-height: 0.85;
+}
+
+.accueil-span {
+  font-family: 'Jaapokki-Subtract';
+  color : #ed6a5a;
+}
+
+#link-form {
+  display: inline-block;
+  font-family: 'Jaapokki-Subtract';
+  color: #56e39f;
+  transition: all 0.4s ease-in-out;
+}
+
+#link-form:hover {
+  transform: rotateX(180deg);
+}
+
+.left {
+  position: absolute;
+  display: block;
+  left: 6px;
+  bottom: 15px;
+  transition: all 0.5s ease-in-out;
+}
+
+.right {
+  position: absolute;
+  right: 6px;
+  bottom: 15px;
+  transition: all 0.5s ease-in-out;
+}
+
+.left:hover, .right:hover {
+  transform: rotateX(180deg);
+}
+
+.nav-main {
+  position: absolute;
+  top: 50px;
+  right: -20%;
+  width : 200px;
+  height: 250px;
+  overflow: scroll;
+}
+
+.nav-main h3 {
+  text-align: center;
+  color :
+}
+
+.li-main {
+  margin-left: 15px;
+  list-style-type: none;
+}
+
+.li-main a {
+  color: white;
+}
+
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+formulaire
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+.form-container {
+  position:absolute;
+  bottom: 45px;
+  left: -40px;
+  width: 4px;
+  height: 440px;
+  align-items: center;
+}
+
+.form-container h3 {
+  opacity: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top:50px;
+ opacity: 1;
+}
+
+form input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#submit {
+  cursor: pointer;
+  border: none;
+  color: white;
+  height: 40px;
+  width: 150px;
+}
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+animation
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+@keyframes opacite {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
