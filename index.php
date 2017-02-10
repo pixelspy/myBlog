@@ -2,23 +2,26 @@
 $entries = array_diff(scandir("articles", 1), array('.', '..', '.php') );
 $key = array_search($_GET['article'] . ".php", $entries);
 
-$today = date('Y-m-d');
-$languageForm = $_POST['language'];
-$titleForm = $_POST['title'];
-$contentForm = $_POST['content'];
+$languagef = $_POST['language'];
+$titlef = $_POST['title'];
+$contentf = $_POST['content'];
 
-function createArticle($date, $language, $title, $content)
+function createArticle($language, $title, $content)
 {
-  $navNav = "<?php include 'nav_article.php'; ?>";
-  $newArticleTitle = $date . ".php";
-  $createdFile = fopen( "./articles/$newArticleTitle", 'x+');
-  fwrite($createdFile, $navNav);
-  fwrite($createdFile, $title);
-  fwrite($createdFile, $content);
-  fclose($createdFile);
+  if(!empty($language))
+  {
+    $today = date('Y-m-d');
+    $navNav = "<?php include 'nav_article.php'; ?>";
+    $newArticleTitle = $today . ".php";
+    $createdFile = fopen( "./articles/$newArticleTitle", 'x+');
+    fputs($createdFile, $navNav);
+    fputs($createdFile, $title);
+    fputs($createdFile, $content);
+    fclose($createdFile);
+  }
 }
 
-createArticle($today, $languageForm, $titleForm, $contentForm);
+createArticle($languagef, $titlef, $contentf);
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +30,8 @@ createArticle($today, $languageForm, $titleForm, $contentForm);
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style2.css">
     <title>Le p'tit blog d'un jeu dev !</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </head>
   <body>
 
@@ -88,8 +93,7 @@ createArticle($today, $languageForm, $titleForm, $contentForm);
 
       <div class="form-container green flex flexColumn">
         <h3 class="font-color-pink">Nouvel Article</h3>
-        <form class="" action="index.php" method="post">
-          <?php echo "<input type=\"text\" name=\"date\" value=\"$today\">"; ?>
+        <form id="form" action="index.php" method="post">
           <input type="text" name="language" value="">
           <input type="text" name="title" value="<h4></h4>">
           <textarea name="content" rows="8" cols="32"><p></p></textarea>
@@ -100,7 +104,5 @@ createArticle($today, $languageForm, $titleForm, $contentForm);
     </main>
     <footer>
     </footer>
-    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
