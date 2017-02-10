@@ -1,7 +1,8 @@
 /* Permet de reload la page et de charger le nouveau fichier automatiquement dans le menu de navigation à droite */
+$(document).ready(function(){
+  $('#form').hide();
 
-$(function() {
-    $('#link-form').click(function() {
-      $('#texteJQ').html('Hello world. Ce texte est affiché par jQuery.');
-    });
-});
+  $( "#link-form" ).click(function() {
+    $( '#form' ).fadeIn();
+  });
+})

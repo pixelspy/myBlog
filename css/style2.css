@@ -177,6 +177,9 @@ main  {
   font-family: 'Jaapokki-Subtract';
   color: #56e39f;
   transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
 #link-form:hover {
@@ -246,15 +249,14 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   opacity: 0;
 }
 
-form {
+#form {
   display: flex;
   flex-direction: column;
   width: 300px;
   margin-top:50px;
- opacity: 1;
 }
 
-form input {
+#form input {
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -266,6 +268,7 @@ form input {
   height: 40px;
   width: 150px;
 }
+
 
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
