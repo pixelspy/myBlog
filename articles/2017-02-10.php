@@ -1,1 +1,1 @@
-<?php include 'nav_article.php'; ?><h4>de</h4><p>de</p>
+<?php include 'nav_article.php'; ?><h4>Le remplaçant de Jquery ?!</h4><p>Faire un petit tour ici : <a href="https://daneden.github.io/animate.css/">Animate.css</a></p>
