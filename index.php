@@ -119,7 +119,7 @@ createArticle($language, $title, $content);
 <!-- ************************************************************************************************************ FORMULAIRE *************************************** ********************************************************************* -->
 
       <div class="form-container green flex flexColumn">
-        <div class="closeFormContainer changeBar">
+        <div class="closeFormContainer">
           <div class="closeForm bar1 black"></div>
           <div class="closeForm bar2 black"></div>
         </div>

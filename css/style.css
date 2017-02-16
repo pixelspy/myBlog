@@ -253,41 +253,63 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   background-color: white;
   right: -30px;
   top: 16px;
+  transition: all 0.6s ease-in-out;
+  transform: scale(0);
 }
+
+  .animated {
+    transform: scale(1);
+  }
 
 .bar1, .bar2 {
   position: absolute;
   background-color: #ed6a5a;
   animation-duration: 0.4s;
-  animation-delay: 0.2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
   cursor: pointer;
 }
 
-.changeBar .bar1 {
-  top: 0;
-  left: 0;
+ .bar1 {
   height: 4px;
   width : 20px;
-  animation-name: rotate1;
+  animation-name: retour1;
+}
 
+ .bar2 {
+  animation-name: retour2;
+  height: 20px;
+  width : 4px;
+}
+
+.changeBar .bar1 {
+  animation-delay: 0.2s;
+  animation-name: rotate1;
 }
 
 .changeBar .bar2 {
-  bottom: 0;
-  right: 0;
-  height: 20px;
-  width : 4px;
-  animation-name:rotate2;
+ animation-delay: 0.2s;
+ animation-name:rotate2;
+}
+
+@keyframes retour1 {
+  0% { transform: rotate(45deg); left: 20px; top: 28px;  background-color: black;}
+  100% { transform: rotate(-180deg);left: 0; top: 0; background-color: #ed6a5a;}
+}
+
+@keyframes retour2 {
+  0% {  transform: rotate(45deg); right: 28px; bottom: 20px; background-color: black;}
+  100% { transform: rotate(360deg); ; right: 0; bottom: 0; background-color: #ed6a5a;}
 }
 
 @keyframes rotate1 {
-  100% { transform: rotate(45deg); left: 20px; top: 28px; background-color: black;}
+  0% {  transform: rotate(0deg); left: 0; top: 0; background-color: #ed6a5a;}
+  100% { transform: rotate(135deg); left: 20px; top: 28px; background-color: black;}
 }
 
 @keyframes rotate2 {
-  100% { transform: rotate(45deg); right: 28px; bottom: 20px; background-color: black;}
+  0% {  transform: rotate(0deg); right: 0; bottom: 0; background-color: #ed6a5a;}
+  100% { transform: rotate(135deg); right: 28px; bottom: 20px; background-color: black;}
 }
 
 .form-container h3 {
